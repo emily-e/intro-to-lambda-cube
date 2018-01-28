@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>An Introduction to Type Systems and the Lambda Cube - Placing Hindley-Milner in context</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="default.min.css">
+	<link rel="stylesheet" href="basic-style.css">
+	<script type="text/javascript" src="highlight.min.js"></script>
+	<script type="text/javascript" src="slideshow.js"></script>
+	<script type="text/javascript">
+		/* Initialize highlight.js to enable syntax highlighting. The use of highlight.js is orthogonal to slideshow.js
+		and only included as a convenience. */
+		hljs.initHighlightingOnLoad();
+
+		/* Wait for the DOM to be ready to initialize the slideshow library. */
+		function ready(fn) {
+			if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
+				fn();
+			} else {
+				document.addEventListener('DOMContentLoaded', fn);
+			}
+		}
+		ready(slideshow);
+	</script>
+</head>
+<body>
+
+
+
+<div class="slide">
+	<h1>An Introduction to Type Systems and the Lambda Cube</h1>
+	<h2>Placing Hindley-Milner in context</h2>
+	<h3>Emily Estes</h3>
+	<h4>March 30th, 2017 @ <a href="https://www.lambda-squared.com/">Lambda Squared</a></h4>
+	<h4>Slides and source code @ <a href="https://github.com/emily-e/intro-to-lambda-cube">https://github.com/emily-e/intro-to-lambda-cube</a></h4>
+	<p>To navigate: left arrow - previous slide, right arrow - next slide, escape - toggle slide show mode.</p>
+	<p class="speaker-notes"><em>Abstract</em>
+	Statically typed functional programming languages represent one of the big ideas of computing. But what is a type system? Why is the Hindley-Milner type system at the core of many functional programming languages? What are dependent types and why does the Curry-Howard isomorphism matter? In this talk we're going to get contravariant about the array of arguments against generic ideas about types! Let's manifest the difference between type inference and unityped dynamic languages! Come explore the menagerie of type systems from alpha reduction to System F-omega and their relationships to the unifying principles of the Lambda Cube. Gain a more global perspective on the kinds of type systems that exist in languages you use and will use and the doors they can open to your designs.</p>
+</div>
+
+
+
+<div class="slide">
+	<p data-hide="a">We're going to make some points.</p>
+	<ul>
+		<li data-reveal="a">Show point 1</li>
+		<li data-reveal="b">Show point 2</li>
+		<li data-reveal="c">Show point 3</li>
+	</ul>
+</div>
+
+<div class="slide">
+</div>
+
+
+
+<div class="slide">
+<h1>References</h1>
+<h4>Slides and source code @ <a href="https://github.com/emily-e/intro-to-lambda-cube">https://github.com/emily-e/intro-to-lambda-cube</a></h4>
+</div>
+
+
+</body>
+</html>
