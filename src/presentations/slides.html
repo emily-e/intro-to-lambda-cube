@@ -31,7 +31,7 @@
 	<h1>An Introduction to Type Systems and the Lambda Cube</h1>
 	<h2>Placing Hindley-Milner in context</h2>
 	<h3>Emily Estes</h3>
-	<h4>March 30th, 2017 @ <a href="https://www.lambda-squared.com/">Lambda Squared</a></h4>
+	<h4>March 30th, 2018 @ <a href="https://www.lambda-squared.com/">Lambda Squared</a></h4>
 	<h4>Slides and source code @ <a href="https://github.com/emily-e/intro-to-lambda-cube">https://github.com/emily-e/intro-to-lambda-cube</a></h4>
 	<p>To navigate: left arrow - previous slide, right arrow - next slide, escape - toggle slide show mode.</p>
 	<p class="speaker-notes"><em>Abstract</em>
@@ -41,15 +41,78 @@
 
 
 <div class="slide">
-	<p data-hide="a">We're going to make some points.</p>
+	<h1>Some questions</h1>
 	<ul>
-		<li data-reveal="a">Show point 1</li>
-		<li data-reveal="b">Show point 2</li>
-		<li data-reveal="c">Show point 3</li>
+		<li data-reveal="a">Do you use linters like Dialyzer (Erlang), Resharper (.Net), Findbugs (Java), Lint (C), Coverity (C/C++), Pylint (Python), and so on?</li>
+		<li data-reveal="b">Those who use JavaScript, do you use ESLint or JSLint or Flow or TypeScript?</li>
+		<li data-reveal="c">If you use Rust, do you like the borrow checker? If you use Go, do you use the data race detector?</li>
+		<li data-reveal="d">Do you like writing down your database schema in SQL? Do you like documenting your wire format with JSON-Schema (or XML Schema/RelaxNG if you're into XML instead)?</li>
+		<li data-reveal="e">Do you use generics in Java or C#?</li>
 	</ul>
 </div>
 
+
+
 <div class="slide">
+	<h1>What is a type system?</h1>
+	<blockquote>
+		<span data-reveal="a" style="font-size: 2em;">A type system is a</span>
+
+		<span data-reveal="a" data-hide="b" style="font-size: 2em;"> tractable</span>
+		<span data-reveal="b" data-hide="c" style="background-color: #ffff40; font-size: 2em;"> tractable</span>
+		<span data-reveal="c" style="font-size: 2em;"> tractable</span>
+
+		<span data-reveal="a" data-hide="c" style="font-size: 2em;"> syntactic method</span>
+		<span data-reveal="c" data-hide="d" style="background-color: #ffff40; font-size: 2em;"> syntactic method</span>
+		<span data-reveal="d" style="font-size: 2em;"> syntactic method</span>
+
+		<span data-reveal="a" data-hide="d" style="font-size: 2em;"> for proving the absence of certain program behaviors</span>
+		<span data-reveal="d" data-hide="e" style="background-color: #ffff40; font-size: 2em;"> for proving the absence of certain program behaviors</span>
+		<span data-reveal="e" style="font-size: 2em;"> for proving the absence of certain program behaviors</span>
+
+		<span data-reveal="a" style="font-size: 2em;"> by</span>
+
+		<span data-reveal="a" data-hide="e" style="font-size: 2em;"> classifying phrases</span>
+		<span data-reveal="e" data-hide="f" style="background-color: #ffff40; font-size: 2em;"> classifying phrases</span>
+		<span data-reveal="f" style="font-size: 2em;"> classifying phrases</span>
+
+		<span data-reveal="a" data-hide="f" style="font-size: 2em;"> according to the kinds of values they compute.</span>
+		<span data-reveal="f" style="background-color: #ffff40; font-size: 2em;"> according to the kinds of values they compute.</span>
+
+		<br/><em data-reveal="a" style="font-size: 1.5em;">Types and Programming Languages by Benjamin Pierce, page 1</em></blockquote>
+</div>
+
+
+
+<div class="slide" style="height: 26em; background-image: url('agents.jpg'); background-size: contain; background-color: #000000;">
+	<blockquote style="align: center;"><span style="color: #ffffff; font-size: 4em;"><br/>Never send a human to do a machine's job.</span>
+	<br/><em style="color: #ffffff; font-size: 2em;">Agent Smith</em></blockquote>
+</div>
+
+
+
+<div class="slide">
+	<h1>A Brief Incomplete History of Type Systems</h1>
+	<ul>
+		<li>Taxonomies and ontologies developed in philosophy and logic and mathematics since ancient times.</li>
+		<li>Leibniz tried to develop an "algebra of thought".</li>
+		<li>In the 19th century, formal proof theory and transfinite mathematics lead Bertrand Russell to create a type system to resolve mathematical pradoxes.</li>
+		<li>1940, Alonzo Church develops the Simply Typed Lambda Calculus</li>
+		<li>1969, Roger Milner develops "The Principal Type-Scheme of an Object in Combinatory Logic" (aka the Hindley-Milner type system)</li>
+		<li>1970's, Martin-L&#x00F6;f develops his constructive type theory</li>
+		<li>1970's, Jean Yves-Girard and John Reynolds discover/develop System-F</li>
+		<li>1978, Robin Milner develops "A Theory of Type Polymorphism in Programming" (aka the Hindley-Milner type system)</li>
+		<li>1980's, Thierry Coquand and G&#x00E9;rard Huet develop "The Calculus of Constructions".</li>
+		<li>1982, Luis Damas and Robin Milner present "Principal type-schemes for functional programs" (aka Algorithm W the efficient implementation of Hindley-Milner).</li>
+		<li>1991, Henk Barendregt conceptualizes the Lambda Cube to explore the different types of abstractions in the Calculus of Constructions.</li>
+	</ul>
+</div>
+
+
+
+<div class="slide">
+	<h1>Hindley-Milner</h1>
+	<h2>Algorithm W</h2>
 </div>
 
 
@@ -57,6 +120,9 @@
 <div class="slide">
 <h1>References</h1>
 <h4>Slides and source code @ <a href="https://github.com/emily-e/intro-to-lambda-cube">https://github.com/emily-e/intro-to-lambda-cube</a></h4>
+<ul>
+	<li><a href="https://www.cis.upenn.edu/~bcpierce/tapl/">Types and Programming Languages</a> by Benjamin Pierce</li>
+</ul>
 </div>
 
 
