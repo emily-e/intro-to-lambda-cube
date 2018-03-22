@@ -41,19 +41,6 @@
 
 
 <div class="slide">
-	<h1>Some questions</h1>
-	<ul>
-		<li data-reveal="a">Do you use linters like Dialyzer (Erlang), Resharper (.Net), Findbugs (Java), Lint (C), Coverity (C/C++), Pylint (Python), and so on?</li>
-		<li data-reveal="b">Those who use JavaScript, do you use ESLint or JSLint or Flow or TypeScript?</li>
-		<li data-reveal="c">If you use Rust, do you like the borrow checker? If you use Go, do you use the data race detector?</li>
-		<li data-reveal="d">Do you like writing down your database schema in SQL? Do you like documenting your wire format with JSON-Schema (or XML Schema/RelaxNG if you're into XML instead)?</li>
-		<li data-reveal="e">Do you use generics in Java or C#?</li>
-	</ul>
-</div>
-
-
-
-<div class="slide">
 	<h1>What is a type system?</h1>
 	<blockquote>
 		<span data-reveal="a" style="font-size: 2em;">A type system is a</span>
@@ -79,7 +66,7 @@
 		<span data-reveal="a" data-hide="f" style="font-size: 2em;"> according to the kinds of values they compute.</span>
 		<span data-reveal="f" style="background-color: #ffff40; font-size: 2em;"> according to the kinds of values they compute.</span>
 
-		<br/><em data-reveal="a" style="font-size: 1.5em;">Types and Programming Languages by Benjamin Pierce, page 1</em></blockquote>
+		<br/><em data-reveal="a" style="font-size: 1.5em;">Types and Programming Languages by Benjamin Pierce</em></blockquote>
 </div>
 
 
@@ -91,21 +78,93 @@
 
 
 
+
 <div class="slide">
-	<h1>A Brief Incomplete History of Type Systems</h1>
+	<h2>A Brief Incomplete History of Type Systems</h1>
 	<ul>
-		<li>Taxonomies and ontologies developed in philosophy and logic and mathematics since ancient times.</li>
-		<li>Leibniz tried to develop an "algebra of thought".</li>
-		<li>In the 19th century, formal proof theory and transfinite mathematics lead Bertrand Russell to create a type system to resolve mathematical pradoxes.</li>
-		<li>1940, Alonzo Church develops the Simply Typed Lambda Calculus</li>
-		<li>1969, Roger Milner develops "The Principal Type-Scheme of an Object in Combinatory Logic" (aka the Hindley-Milner type system)</li>
-		<li>1970's, Martin-L&#x00F6;f develops his constructive type theory</li>
-		<li>1970's, Jean Yves-Girard and John Reynolds discover/develop System-F</li>
-		<li>1978, Robin Milner develops "A Theory of Type Polymorphism in Programming" (aka the Hindley-Milner type system)</li>
-		<li>1980's, Thierry Coquand and G&#x00E9;rard Huet develop "The Calculus of Constructions".</li>
-		<li>1982, Luis Damas and Robin Milner present "Principal type-schemes for functional programs" (aka Algorithm W the efficient implementation of Hindley-Milner).</li>
-		<li>1991, Henk Barendregt conceptualizes the Lambda Cube to explore the different types of abstractions in the Calculus of Constructions.</li>
+		<li data-hide="a">Taxonomies and ontologies developed in philosophy since ancient times.</li>
+		<li data-hide="a">17th centtury, Leibniz tried to develop an "algebra of thought".</li>
+		<li data-hide="a">19th century, Bertrand Russell creates the first modern type system to solve problems in proofs.</li>
+		<li data-reveal="a">1940, Alonzo Church develops the Simply Typed Lambda Calculus</li>
+		<li data-reveal="a">1969, Roger Milner develops "The Principal Type-Scheme of an Object in Combinatory Logic" (aka the Hindley-Milner type system)</li>
+		<li data-reveal="a">1970's, Martin-L&#x00F6;f develops his constructive type theory</li>
+		<li data-reveal="a">1970's, Jean Yves-Girard and John Reynolds independently discover/develop System-F</li>
+		<li data-reveal="a">1978, Robin Milner develops "A Theory of Type Polymorphism in Programming" (aka the Hindley-Milner type system)</li>
+		<li data-reveal="a">1980's, Thierry Coquand and G&#x00E9;rard Huet develop "The Calculus of Constructions".</li>
+		<li data-reveal="a">1982, Luis Damas and Robin Milner present "Principal type-schemes for functional programs" (aka Algorithm W the efficient implementation of Hindley-Milner).</li>
+		<li data-reveal="a">1991, Henk Barendregt conceptualizes the Lambda Cube as a teaching tool to explore the Calculus of Constructions.</li>
 	</ul>
+</div>
+
+
+
+<div class="slide">
+	<h2>Mathematical formalisms are scary...</h2>
+	<blockquote data-reveal="a">
+		<ol>
+			<li>Those that belong to the emperor</li>
+			<li>Embalmed ones</li>
+			<li>Those that are trained</li>
+			<li>Suckling pigs</li>
+			<li>Mermaids (or Sirens)</li>
+			<li>Fabulous ones</li>
+			<li>Stray dogs</li>
+			<li>Those that are included in this classification</li>
+			<li>Those that tremble as if they were mad</li>
+			<li>Innumerable ones</li>
+			<li>Those drawn with a very fine camel hair brush</li>
+			<li>Et cetera</li>
+			<li>Those that have just broken the flower vase</li>
+			<li>Those that, at a distance, resemble flies</li>
+		</ol>
+		from <a href="https://en.wikipedia.org/wiki/Celestial_Emporium_of_Benevolent_Knowledge">Celestial Emporium of Benevolent Knowledge</a> taxonomy of animals.
+	</blockquote>
+	<h2 data-reveal="a">... Informality is scarier</h2>
+</div>
+
+
+<div class="slide">
+	<h1>Some Definitions</h1>
+	<dl>
+		<dt>Manifest Typing</dt>
+		<dd></dd>
+		<dt>Type Inference</dt>
+		<dd></dd>
+	</dl>
+</div>
+
+
+
+<div class="slide" style="width: 100%">
+	<h1>The Cube</h1>
+	<div style="align-content: center">
+	<img width="340px" style="align-content: center" data-hide="a" src="Lament_configuration.png" />
+	<img width="340px" style="align-content: center" data-reveal="a" src="Lambda_cube.png" />
+	</div>
+</div>
+
+
+
+<div class="slide">
+	<h2>&#x03bb; - Simply Typed Lambda Calculus
+	<h2>(0,0,0)<h2>
+
+</div>
+
+<div class="slide">
+	<h2>&#x03bb;2 - Polymorphic Lambda Calculus</h2>
+	<h2>System-F - (1,0,0)</h2>
+</div>
+
+<div class="slide">
+	<h2>&#x03bb;&#x03c9; - Higher Order Polymorphic Lambda Calculus</h2>
+	<h2>System F<sub>&#x03c9;</sub> - (1,1,0)</h2>
+</div>
+
+<div class="slide">
+	<h2>&#x03bb;&#x03a0;&#x03c9; - Higher Order Dependently Typed Polymorphic Lambda Calculus</h2>
+	<h2>(1,1,1)</h2>
+
 </div>
 
 
