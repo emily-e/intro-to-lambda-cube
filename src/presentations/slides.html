@@ -130,9 +130,40 @@
 		<dd></dd>
 		<dt>Type Inference</dt>
 		<dd></dd>
+		<dt>Static Typing</dt>
+		<dd></dd>
+		<dt>Dynamic Typing</dt>
+		<dd></dd>
 	</dl>
 </div>
 
+<div class="slide">
+	<h2>Some anti-definitions</h2>
+	<dl>
+		<dt>Strong typing</dt>
+		<dd data-reveal="a">A type system that I like and feel comfortable with</dd>
+		<dt>Weak typing</dt>
+		<dd data-reveal="a">A type system that worries me, or makes me feel uncomfortable</dd>
+	</dl>
+	<span data-reveal="a">From <a href="http://blogs.perl.org/users/ovid/2010/08/what-to-know-before-debating-type-systems.html">What To Know Before Debating Type Systems</a></span>
+	<h2 data-reveal="b"><img width="240px" src="fetch.jpg" /><br/>
+	Stop trying to make "strong typing" happen.<br/>
+	It's not going to happen.</h2>
+</div>
+
+<div class="slide">
+	<h1>Some (more) Definitions</h1>
+	<dl>
+		<dt>Sound type system</dt>
+		<dd></dd>
+		<dt>Progress</dt>
+		<dd></dd>
+		<dt>Preservation</dt>
+		<dd></dd>
+		<dt>Unsound type system</dt>
+		<dd></dd>
+	</dl>
+</div>
 
 
 <div class="slide" style="width: 100%">
@@ -171,7 +202,10 @@
 
 <div class="slide">
 	<h1>Hindley-Milner</h1>
-	<h2>Algorithm W</h2>
+</div>
+
+<div class="slide">
+	<h1>Algorithm W</h1>
 </div>
 
 
@@ -180,12 +214,27 @@
 	<br/><em style="text-shadow: 5px 5px 3px #000000; color: #ffa000; font-weight: 500; font-size: 2em;">William Gibson</em></blockquote>
 </div>
 
+<div class="slide">
+	<h1>The past and the future</h1>
+	<ul>
+		<li data-reveal="a">This talk has covered the past... most of the type systems and algorithms are well understood historical research milestones.</li>
+		<li data-reveal="a">Type systems and inference have advanced since then. Algorithms like Pierce-Turner and Dunfield-Krishnaswami go beyond Hindley-Milner.</li>
+		<li data-reveal="a">"Mainstream" languages rarely and begrudgingly take advantage of 40 year old research. Unsound type systems abound, limited local type inference is presented as breakthrough.</li>
+		<li data-reveal="a">"Software is eating the world" - Correct code matters more than ever - software failures are impacting the environment, politics, and every facet of society - events like the Equifax hack, VW's Dieselgate, Heartbleed, etc. are routine.</li>
+	</ul>
+	<h2 data-reveal="b">Why do we not demand more from our tools?</h2>
+</div>
 
 <div class="slide">
 <h1>References</h1>
 <h4>Slides and source code @ <a href="https://github.com/emily-e/intro-to-lambda-cube">https://github.com/emily-e/intro-to-lambda-cube</a></h4>
 <ul>
 	<li><a href="https://www.cis.upenn.edu/~bcpierce/tapl/">Types and Programming Languages</a> by Benjamin Pierce</li>
+	<li><a href="http://blogs.perl.org/users/ovid/2010/08/what-to-know-before-debating-type-systems.html">What to know before debating type systems</a></li>
+	<li><a href="http://www.cis.upenn.edu/~bcpierce/papers/lti-toplas.pdf">Pierce-Turner type inference</a></li>
+	<li><a href="https://arxiv.org/abs/1306.6032">Complete and Easy Bidirectional Typechecking for Higher-Rank Polymorphism</a> by Joshua Dunfield, Neelakantan R. Krishnaswami</li>
+	<li><a href="https://arxiv.org/abs/1601.05106">Sound and Complete Bidirectional Typechecking for Higher-Rank Polymorphism with Existentials and Indexed Types</a> by Joshua Dunfield, Neelakantan R. Krishnaswami</li>
+	<li><a href="http://www.paultaylor.eu/stable/prot.pdf">Proofs and Types</a> by Jean-Yves Girard</li>
 </ul>
 </div>
 
