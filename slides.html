@@ -170,32 +170,218 @@
 	<h1>The Cube</h1>
 	<div style="align-content: center">
 	<img width="340px" style="align-content: center" data-hide="a" src="Lament_configuration.png" />
-	<img width="340px" style="align-content: center" data-reveal="a" src="Lambda_cube.png" />
+	<!--<img width="340px" style="align-content: center" data-reveal="a" src="Lambda_cube.png" />-->
+	<svg data-reveal="a" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+		<defs>
+			<marker id="head" orient='auto' markerWidth='2' markerHeight='4' refX='0.1' refY='2'>
+			<path d='M0,0 V4 L2,2 Z' fill="auto" />
+			</marker>
+		</defs>
+
+			<text x="80" y="30" font-family="Verdana" font-size="20">&#x03bb;&#x03c9;</text>
+			<text x="240" y="30" font-family="Verdana" font-size="20">&#x03bb;&#x03a0;&#x03c9;</text>
+			<text x="20" y="100" font-family="Verdana" font-size="20">&#x03bb;2</text>
+		<path marker-end='url(#head)' stroke-width="3" fill='none' stroke='black'  d="M60,94 l 110,0" />
+		<path marker-end='url(#head)' stroke-width="3" fill='none' stroke='black'  d="M34,260 l 0,-140" />
+		<path marker-end='url(#head)' stroke-width="3" fill='none' stroke='black'  d="M194,260 l 0,-140" />
+		<path marker-end='url(#head)' stroke-width="3" fill='none' stroke='black'  d="M60,274 l 110,0" />
+
+			<text x="180" y="100" font-family="Verdana" font-size="20">&#x03bb;&#x03a0;2</text>
+
+			<text x="240" y="210" font-family="Verdana" font-size="20">&#x03bb;&#x03a0;</text>
+			<text x="272" y="210" font-family="Verdana" font-size="20" style="text-decoration: underline">&#x03c9;</text>
+
+			<text x="80" y="210" font-family="Verdana" font-size="20">&#x03bb;</text>
+			<text x="94" y="210" font-family="Verdana" font-size="20" style="text-decoration: underline">&#x03c9;</text>
+
+		<text x="20" y="280" font-family="Verdana" font-size="20">&#x03bb;&#x2192;</text>
+			<text x="180" y="280" font-family="Verdana" font-size="20">&#x03bb;&#x03a0;</text>
+
+			<path marker-end='url(#head)' stroke-width="3" fill='none' stroke='black'  d="M120,24 l 110,0" />
+			<path marker-end='url(#head)' stroke-width="3" fill='none' stroke='black'  d="M104,190 l 0,-140" />
+			<path marker-end='url(#head)' stroke-width="3" fill='none' stroke='black'  d="M264,190 l 0,-140" />
+			<path marker-end='url(#head)' stroke-width="3" fill='none' stroke='black'  d="M120,204 l 110,0" />
+
+		<path marker-end='url(#head)' stroke-width="3" fill='none' stroke='black'  d="M40,80 l 40,-40" />
+		<path marker-end='url(#head)' stroke-width="3" fill='none' stroke='black'  d="M210,80 l 40,-40" />
+		<path marker-end='url(#head)' stroke-width="3" fill='none' stroke='black'  d="M40,260 l 40,-40" />
+		<path marker-end='url(#head)' stroke-width="3" fill='none' stroke='black'  d="M210,260 l 40,-40" />
+	</svg>
 	</div>
 </div>
 
 
 
 <div class="slide">
-	<h2>&#x03bb; - Simply Typed Lambda Calculus<br/>
-	(0,0,0)<h2>
+	<h2>&#x03bb;&#x2192; - Simply Typed Lambda Calculus</h2>
+	<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+		<defs>
+			<marker id="head-1" orient='auto' markerWidth='2' markerHeight='4' refX='0.1' refY='2'>
+			<path d='M0,0 V4 L2,2 Z' fill="auto" />
+			</marker>
+		</defs>
 
+			<text x="80" y="30" font-family="Verdana" font-size="20">&#x03bb;&#x03c9;</text>
+			<!-- 1,1,0 to 1,1,1 -->
+			<text x="240" y="30" font-family="Verdana" font-size="20">&#x03bb;&#x03a0;&#x03c9;</text>
+			<text x="20" y="100" font-family="Verdana" font-size="20">&#x03bb;2</text>
+		<path marker-end='url(#head-1)' stroke-width="3" fill='none' stroke='black'  d="M60,94 l 110,0" />
+		<path marker-end='url(#head-1)' stroke-width="3" fill='none' stroke='black'  d="M34,260 l 0,-140" />
+		<path marker-end='url(#head-1)' stroke-width="3" fill='none' stroke='black'  d="M194,260 l 0,-140" />
+		<path marker-end='url(#head-1)' stroke-width="3" fill='none' stroke='black'  d="M60,274 l 110,0" />
+
+			<text x="180" y="100" font-family="Verdana" font-size="20">&#x03bb;&#x03a0;2</text>
+
+			<text x="240" y="210" font-family="Verdana" font-size="20">&#x03bb;&#x03a0;</text>
+			<text x="272" y="210" font-family="Verdana" font-size="20" style="text-decoration: underline">&#x03c9;</text>
+
+			<text x="80" y="210" font-family="Verdana" font-size="20">&#x03bb;</text>
+			<text x="94" y="210" font-family="Verdana" font-size="20" style="text-decoration: underline">&#x03c9;</text>
+
+		<text x="20" y="280" stroke="red" fill="red" font-family="Verdana" font-size="20">&#x03bb;&#x2192;</text>
+			<text x="180" y="280" font-family="Verdana" font-size="20">&#x03bb;&#x03a0;</text>
+
+			<path marker-end='url(#head-1)' stroke-width="3" fill='none' stroke='black'  d="M120,24 l 110,0" />
+			<path marker-end='url(#head-1)' stroke-width="3" fill='none' stroke='black'  d="M104,190 l 0,-140" />
+			<path marker-end='url(#head-1)' stroke-width="3" fill='none' stroke='black'  d="M264,190 l 0,-140" />
+			<path marker-end='url(#head-1)' stroke-width="3" fill='none' stroke='black'  d="M120,204 l 110,0" />
+
+		<path marker-end='url(#head-1)' stroke-width="3" fill='none' stroke='black'  d="M40,80 l 40,-40" />
+		<path marker-end='url(#head-1)' stroke-width="3" fill='none' stroke='black'  d="M210,80 l 40,-40" />
+		<path marker-end='url(#head-1)' stroke-width="3" fill='none' stroke='black'  d="M40,260 l 40,-40" />
+		<path marker-end='url(#head-1)' stroke-width="3" fill='none' stroke='black'  d="M210,260 l 40,-40" />
+	</svg>
 </div>
 
 <div class="slide">
 	<h2>&#x03bb;2 - Polymorphic Lambda Calculus<br/>
-	System-F - (1,0,0)</h2>
+	System-F</h2>
+	<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+		<defs>
+			<marker id="head-2" orient='auto' markerWidth='2' markerHeight='4' refX='0.1' refY='2'>
+			<path d='M0,0 V4 L2,2 Z' fill="auto" />
+			</marker>
+			<marker id="red-head-2" orient='auto' markerWidth='2' markerHeight='4' refX='0.1' refY='2'>
+			<path d='M0,0 V4 L2,2 Z' fill="red" />
+			</marker>
+		</defs>
+
+			<text x="80" y="30" font-family="Verdana" font-size="20">&#x03bb;&#x03c9;</text>
+			<text x="240" y="30" font-family="Verdana" font-size="20">&#x03bb;&#x03a0;&#x03c9;</text>
+			<text x="20" y="100" stroke="red" fill="red" font-family="Verdana" font-size="20">&#x03bb;2</text>
+		<path marker-end='url(#head-2)' stroke-width="3" fill='none' stroke='black'  d="M60,94 l 110,0" />
+		<path marker-end='url(#red-head-2)' stroke-width="3" fill='red' stroke='red'  d="M34,260 l 0,-140" />
+		<path marker-end='url(#head-2)' stroke-width="3" fill='none' stroke='black'  d="M194,260 l 0,-140" />
+		<path marker-end='url(#head-2)' stroke-width="3" fill='none' stroke='black'  d="M60,274 l 110,0" />
+
+			<text x="180" y="100" font-family="Verdana" font-size="20">&#x03bb;&#x03a0;2</text>
+
+			<text x="240" y="210" font-family="Verdana" font-size="20">&#x03bb;&#x03a0;</text>
+			<text x="272" y="210" font-family="Verdana" font-size="20" style="text-decoration: underline">&#x03c9;</text>
+
+			<text x="80" y="210" font-family="Verdana" font-size="20">&#x03bb;</text>
+			<text x="94" y="210" font-family="Verdana" font-size="20" style="text-decoration: underline">&#x03c9;</text>
+
+		<text x="20" y="280" font-family="Verdana" font-size="20">&#x03bb;&#x2192;</text>
+			<text x="180" y="280" font-family="Verdana" font-size="20">&#x03bb;&#x03a0;</text>
+
+			<path marker-end='url(#head-2)' stroke-width="3" fill='none' stroke='black'  d="M120,24 l 110,0" />
+			<path marker-end='url(#head-2)' stroke-width="3" fill='none' stroke='black'  d="M104,190 l 0,-140" />
+			<path marker-end='url(#head-2)' stroke-width="3" fill='none' stroke='black'  d="M264,190 l 0,-140" />
+			<path marker-end='url(#head-2)' stroke-width="3" fill='none' stroke='black'  d="M120,204 l 110,0" />
+
+		<path marker-end='url(#head-2)' stroke-width="3" fill='none' stroke='black'  d="M40,80 l 40,-40" />
+		<path marker-end='url(#head-2)' stroke-width="3" fill='none' stroke='black'  d="M210,80 l 40,-40" />
+		<path marker-end='url(#head-2)' stroke-width="3" fill='none' stroke='black'  d="M40,260 l 40,-40" />
+		<path marker-end='url(#head-2)' stroke-width="3" fill='none' stroke='black'  d="M210,260 l 40,-40" />
+	</svg>
 </div>
 
 <div class="slide">
 	<h2>&#x03bb;&#x03c9; - Higher Order Polymorphic Lambda Calculus<br/>
-	System F<sub>&#x03c9;</sub> - (1,1,0)</h2>
+	System F<sub>&#x03c9;</sub></h2>
+	<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+		<defs>
+			<marker id="head-3" orient='auto' markerWidth='2' markerHeight='4' refX='0.1' refY='2'>
+			<path d='M0,0 V4 L2,2 Z' fill="auto" />
+			</marker>
+			<marker id="red-head-3" orient='auto' markerWidth='2' markerHeight='4' refX='0.1' refY='2'>
+			<path d='M0,0 V4 L2,2 Z' fill="red" />
+			</marker>
+		</defs>
+
+			<text x="80" y="30" stroke="red" fill="red" font-family="Verdana" font-size="20">&#x03bb;&#x03c9;</text>
+			<text x="240" y="30" font-family="Verdana" font-size="20">&#x03bb;&#x03a0;&#x03c9;</text>
+			<text x="20" y="100" font-family="Verdana" font-size="20">&#x03bb;2</text>
+		<path marker-end='url(#head-3)' stroke-width="3" fill='none' stroke='black'  d="M60,94 l 110,0" />
+		<path marker-end='url(#red-head-3)' stroke-width="3" fill='red' stroke='red'  d="M34,260 l 0,-140" />
+		<path marker-end='url(#head-3)' stroke-width="3" fill='none' stroke='black'  d="M194,260 l 0,-140" />
+		<path marker-end='url(#head-3)' stroke-width="3" fill='none' stroke='black'  d="M60,274 l 110,0" />
+
+			<text x="180" y="100" font-family="Verdana" font-size="20">&#x03bb;&#x03a0;2</text>
+
+			<text x="240" y="210" font-family="Verdana" font-size="20">&#x03bb;&#x03a0;</text>
+			<text x="272" y="210" font-family="Verdana" font-size="20" style="text-decoration: underline">&#x03c9;</text>
+
+			<text x="80" y="210" font-family="Verdana" font-size="20">&#x03bb;</text>
+			<text x="94" y="210" font-family="Verdana" font-size="20" style="text-decoration: underline">&#x03c9;</text>
+
+		<text x="20" y="280" font-family="Verdana" font-size="20">&#x03bb;&#x2192;</text>
+			<text x="180" y="280" font-family="Verdana" font-size="20">&#x03bb;&#x03a0;</text>
+
+			<path marker-end='url(#head-3)' stroke-width="3" fill='none' stroke='black'  d="M120,24 l 110,0" />
+			<path marker-end='url(#head-3)' stroke-width="3" fill='none' stroke='black'  d="M104,190 l 0,-140" />
+			<path marker-end='url(#head-3)' stroke-width="3" fill='none' stroke='black'  d="M264,190 l 0,-140" />
+			<path marker-end='url(#head-3)' stroke-width="3" fill='none' stroke='black'  d="M120,204 l 110,0" />
+
+		<path marker-end='url(#red-head-3)' stroke-width="3" fill='red' stroke='red'  d="M40,80 l 40,-40" />
+		<path marker-end='url(#head-3)' stroke-width="3" fill='none' stroke='black'  d="M210,80 l 40,-40" />
+		<path marker-end='url(#head-3)' stroke-width="3" fill='none' stroke='black'  d="M40,260 l 40,-40" />
+		<path marker-end='url(#head-3)' stroke-width="3" fill='none' stroke='black'  d="M210,260 l 40,-40" />
+	</svg>
 </div>
 
 <div class="slide">
-	<h2>&#x03bb;&#x03a0;&#x03c9; - Higher Order Dependently Typed Polymorphic Lambda Calculus<br/>
-	(1,1,1)</h2>
+	<h2>&#x03bb;&#x03a0;&#x03c9; - Higher Order Dependently Typed Polymorphic Lambda Calculus</h2>
+	<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+		<defs>
+			<marker id="head-4" orient='auto' markerWidth='2' markerHeight='4' refX='0.1' refY='2'>
+			<path d='M0,0 V4 L2,2 Z' fill="auto" />
+			</marker>
+			<marker id="red-head-4" orient='auto' markerWidth='2' markerHeight='4' refX='0.1' refY='2'>
+			<path d='M0,0 V4 L2,2 Z' fill="red" />
+			</marker>
+		</defs>
 
+			<text x="80" y="30" font-family="Verdana" font-size="20">&#x03bb;&#x03c9;</text>
+			<text x="240" y="30" stroke="red" fill="red" font-family="Verdana" font-size="20">&#x03bb;&#x03a0;&#x03c9;</text>
+			<text x="20" y="100" font-family="Verdana" font-size="20">&#x03bb;2</text>
+		<path marker-end='url(#head-4)' stroke-width="3" fill='none' stroke='black'  d="M60,94 l 110,0" />
+		<path marker-end='url(#red-head-4)' stroke-width="3" fill='red' stroke='red'  d="M34,260 l 0,-140" />
+		<path marker-end='url(#head-4)' stroke-width="3" fill='none' stroke='black'  d="M194,260 l 0,-140" />
+		<path marker-end='url(#head-4)' stroke-width="3" fill='none' stroke='black'  d="M60,274 l 110,0" />
+
+			<text x="180" y="100" font-family="Verdana" font-size="20">&#x03bb;&#x03a0;2</text>
+
+			<text x="240" y="210" font-family="Verdana" font-size="20">&#x03bb;&#x03a0;</text>
+			<text x="272" y="210" font-family="Verdana" font-size="20" style="text-decoration: underline">&#x03c9;</text>
+
+			<text x="80" y="210" font-family="Verdana" font-size="20">&#x03bb;</text>
+			<text x="94" y="210" font-family="Verdana" font-size="20" style="text-decoration: underline">&#x03c9;</text>
+
+		<text x="20" y="280" font-family="Verdana" font-size="20">&#x03bb;&#x2192;</text>
+			<text x="180" y="280" font-family="Verdana" font-size="20">&#x03bb;&#x03a0;</text>
+
+			<path marker-end='url(#red-head-4)' stroke-width="3" fill='red' stroke='red'  d="M120,24 l 110,0" />
+			<path marker-end='url(#head-4)' stroke-width="3" fill='none' stroke='black'  d="M104,190 l 0,-140" />
+			<path marker-end='url(#head-4)' stroke-width="3" fill='none' stroke='black'  d="M264,190 l 0,-140" />
+			<path marker-end='url(#head-4)' stroke-width="3" fill='none' stroke='black'  d="M120,204 l 110,0" />
+
+		<path marker-end='url(#red-head-4)' stroke-width="3" fill='red' stroke='red'  d="M40,80 l 40,-40" />
+		<path marker-end='url(#head-4)' stroke-width="3" fill='none' stroke='black'  d="M210,80 l 40,-40" />
+		<path marker-end='url(#head-4)' stroke-width="3" fill='none' stroke='black'  d="M40,260 l 40,-40" />
+		<path marker-end='url(#head-4)' stroke-width="3" fill='none' stroke='black'  d="M210,260 l 40,-40" />
+	</svg>
 </div>
 
 
