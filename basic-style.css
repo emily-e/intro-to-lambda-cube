@@ -15,6 +15,10 @@ dd {
 	margin-top: 0.5em;
 }
 
+dt {
+	font-weight: bold;
+}
+
 ul {
 	font-size: 1.2em;
 }

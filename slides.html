@@ -35,6 +35,15 @@
 
 
 <div class="slide">
+<p class="speaker-notes">This slide left intentionally blank to ask a series of hand raising questions.
+Who prefers dynamically type (checked) languages to static.
+Who uses static analysis tools like ESLint, Dialyzer.
+</p>
+</div>
+
+
+
+<div class="slide">
 	<h1>What is a type system?</h1>
 	<blockquote>
 		<span data-reveal="a" style="font-size: 2em;">A type system is a</span>
@@ -117,7 +126,8 @@
 			<li>Those that have just broken the flower vase</li>
 			<li>Those that, at a distance, resemble flies</li>
 		</ol>
-		from <a href="https://en.wikipedia.org/wiki/Celestial_Emporium_of_Benevolent_Knowledge">Celestial Emporium of Benevolent Knowledge</a> taxonomy of animals.
+		from a taxonomy of <span data-hide="b">RESTful API's</span>
+		<span data-reveal="b"><strike>RESTful API's</strike> animals in the <a href="https://en.wikipedia.org/wiki/Celestial_Emporium_of_Benevolent_Knowledge">Celestial Emporium of Benevolent Knowledge</a></span>
 	</blockquote>
 	<h2 data-reveal="a">... Informality is scarier</h2>
 </div>
@@ -127,13 +137,14 @@
 	<h1>Some Definitions</h1>
 	<dl>
 		<dt>Manifest Typing</dt>
-		<dd></dd>
+		<dd>The explicit annotation of the type of an expressions. e.g. declaring a variable's type <code>int foo;</code></dd>
 		<dt>Type Inference</dt>
-		<dd></dd>
+		<dd>The ability of a type system to determine the type of an expression without any declaration or annotation of the type.</dd>
 		<dt>Static Typing</dt>
-		<dd></dd>
+		<dd>Approximately - checking that a type error is not present in a program by examing the source code alone.</dd>
 		<dt>Dynamic Typing</dt>
-		<dd></dd>
+		<dd>Checking at execution time that no type error is present when evaluating a value, and entering a well defined error state.
+		(If you ask Robert Harper they are "unityped languages", i.e. every expression has the static type of <code>any</code>)</dd>
 	</dl>
 </div>
 
@@ -146,22 +157,25 @@
 		<dd>A type system that worries me, or makes me feel uncomfortable</dd>
 	</dl>
 	<span>From <a href="http://blogs.perl.org/users/ovid/2010/08/what-to-know-before-debating-type-systems.html">What To Know Before Debating Type Systems</a></span>
-	<h2 data-reveal="a"><img width="240px" src="fetch.jpg" /><br/>
-	Stop trying to make "strong typing" happen.<br/>
-	It's not going to happen.</h2>
+	<div data-reveal="a"><img style="float: left" width="240px" src="fetch.jpg" /><br/>
+	<h2>Stop trying to make "strong typing" happen.<br/>
+	It's not going to happen.</h2></div>
 </div>
 
 <div class="slide">
 	<h1>Some (more) Definitions</h1>
 	<dl>
 		<dt>Sound type system</dt>
-		<dd></dd>
-		<dt>Progress</dt>
-		<dd></dd>
-		<dt>Preservation</dt>
-		<dd></dd>
+		<dd>One that provides a guarantee that type errors will not occur. "A language is type-safe if the only operations that can be performed on data in the language are those sanctioned by the type of the data." - Vijay Saraswat
+			<dl>
+				<dt>Progress</dt>
+				<dd>A program with correct types will either terminate with the value it calculated or continue to execute in well defined states.</dd>
+				<dt>Preservation</dt>
+				<dd>With each state transition in the interpreter for the language, a program with correct types will still have correct types.</dd>
+			</dl>
+		</dd>
 		<dt>Unsound type system</dt>
-		<dd></dd>
+		<dd>Most mainstream languages...</dd>
 	</dl>
 </div>
 
@@ -387,11 +401,58 @@
 
 <div class="slide">
 	<h1>Hindley-Milner</h1>
+	<svg style="float: left" data-hide="d" xmlns="http://www.w3.org/2000/svg" width="300" height="300">d
+		<defs>
+			<marker id="head-5" orient='auto' markerWidth='2' markerHeight='4' refX='0.1' refY='2'>
+			<path d='M0,0 V4 L2,2 Z' fill="auto" />
+			</marker>
+			<marker id="circle" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+				<circle cx="4" cy="4" r="2" fill="red"/>
+			</marker>
+		</defs>
+
+			<text x="80" y="30" font-family="Verdana" font-size="20">&#x03bb;&#x03c9;</text>
+			<text x="240" y="30" font-family="Verdana" font-size="20">&#x03bb;&#x03a0;&#x03c9;</text>
+			<text x="20" y="100" font-family="Verdana" font-size="20">&#x03bb;2</text>
+		<path marker-end='url(#head-5)' stroke-width="3" fill='none' stroke='black'  d="M60,94 l 110,0" />
+		<path marker-end='url(#head-5)' stroke-width="3" fill='none' stroke='black'  d="M34,260 l 0,-140" />
+		<path marker-end='url(#circle)' stroke-width="3" fill='red' stroke='red'  d="M34,260 l 0,-100" />
+		<path marker-end='url(#head-5)' stroke-width="3" fill='none' stroke='black'  d="M194,260 l 0,-140" />
+		<path marker-end='url(#head-5)' stroke-width="3" fill='none' stroke='black'  d="M60,274 l 110,0" />
+
+			<text x="180" y="100" font-family="Verdana" font-size="20">&#x03bb;&#x03a0;2</text>
+
+			<text x="240" y="210" font-family="Verdana" font-size="20">&#x03bb;&#x03a0;</text>
+			<text x="272" y="210" font-family="Verdana" font-size="20" style="text-decoration: underline">&#x03c9;</text>
+
+			<text x="80" y="210" font-family="Verdana" font-size="20">&#x03bb;</text>
+			<text x="94" y="210" font-family="Verdana" font-size="20" style="text-decoration: underline">&#x03c9;</text>
+
+		<text x="20" y="280" font-family="Verdana" font-size="20">&#x03bb;&#x2192;</text>
+			<text x="180" y="280" font-family="Verdana" font-size="20">&#x03bb;&#x03a0;</text>
+
+			<path marker-end='url(#head-5)' stroke-width="3" fill='none' stroke='black'  d="M120,24 l 110,0" />
+			<path marker-end='url(#head-5)' stroke-width="3" fill='none' stroke='black'  d="M104,190 l 0,-140" />
+			<path marker-end='url(#head-5)' stroke-width="3" fill='none' stroke='black'  d="M264,190 l 0,-140" />
+			<path marker-end='url(#head-5)' stroke-width="3" fill='none' stroke='black'  d="M120,204 l 110,0" />
+
+		<path marker-end='url(#head-5)' stroke-width="3" fill='none' stroke='black'  d="M40,80 l 40,-40" />
+		<path marker-end='url(#head-5)' stroke-width="3" fill='none' stroke='black'  d="M210,80 l 40,-40" />
+		<path marker-end='url(#head-5)' stroke-width="3" fill='none' stroke='black'  d="M40,260 l 40,-40" />
+		<path marker-end='url(#head-5)' stroke-width="3" fill='none' stroke='black'  d="M210,260 l 40,-40" />
+	</svg>
+	<img style="float: left" data-reveal="d" width="300" height="300" src="hindley-milner.svg" />
+	<ul style="list-style-position: inside;">
+		<li data-reveal="a">Completely Decideable Type Inference - no type annotation required, "Static duck typing"</li>
+		<li data-reveal="b">Efficient - Mostly works in linear time</li>
+		<li data-reveal="c">Finds the most general type</li>
+		<li data-reveal="d">Relatively simple to implement. The paper that describes algorithm W is only 7 pages.</li>
+		<li data-reveal="e">It is well understand - it's almost 50 years old.</li>
+		<li data-reveal="f">Many extensions have been created and documented to add power.</li>
+		<li data-reveal="g">Designing a type system is easy to get wrong - Hindley-Milner gets a lot right, when designing a domain specific language, it's a good starting point.</li>
+	</ul>
 </div>
 
-<div class="slide">
-	<h1>Algorithm W</h1>
-</div>
 
 
 <div class="slide"
@@ -399,8 +460,8 @@
 			background-image: url('static.jpg');
 			background-size: contain;
 			background-position: center center;
-			background-repeat: no-repeat;" -->
-	<blockquote style="align: center;"><br/><br/><span style="text-shadow: 7px 7px 4px #000000; font-weight: 500; color: #ffa000; font-size: 3.9em;">The future is already here -- it's just not very evenly distributed.</span>
+			" -->
+	<blockquote style="align: center;"><br/><br/><span style="text-shadow: 7px 7px 4px #000000; font-weight: 500; color: #ffa000; font-size: 3.9em;">The future is already here - it's just not very evenly distributed.</span>
 	<br/><em style="text-shadow: 5px 5px 3px #000000; color: #ffa000; font-weight: 500; font-size: 2em;">William Gibson</em></blockquote>
 </div>
 
@@ -425,6 +486,7 @@
 	<li><a href="https://arxiv.org/abs/1306.6032">Complete and Easy Bidirectional Typechecking for Higher-Rank Polymorphism</a> by Joshua Dunfield, Neelakantan R. Krishnaswami</li>
 	<li><a href="https://arxiv.org/abs/1601.05106">Sound and Complete Bidirectional Typechecking for Higher-Rank Polymorphism with Existentials and Indexed Types</a> by Joshua Dunfield, Neelakantan R. Krishnaswami</li>
 	<li><a href="http://www.paultaylor.eu/stable/prot.pdf">Proofs and Types</a> by Jean-Yves Girard</li>
+	<li><a href="https://existentialtype.wordpress.com/2011/03/19/dynamic-languages-are-static-languages/">Dynamic Languages are Static Languages</a
 </ul>
 </div>
 
