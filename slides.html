@@ -3,15 +3,9 @@
 <head>
 	<title>An Introduction to Type Systems and the Lambda Cube - Placing Hindley-Milner in context</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="default.min.css">
 	<link rel="stylesheet" href="basic-style.css">
-	<script type="text/javascript" src="highlight.min.js"></script>
 	<script type="text/javascript" src="slideshow.js"></script>
 	<script type="text/javascript">
-		/* Initialize highlight.js to enable syntax highlighting. The use of highlight.js is orthogonal to slideshow.js
-		and only included as a convenience. */
-		hljs.initHighlightingOnLoad();
-
 		/* Wait for the DOM to be ready to initialize the slideshow library. */
 		function ready(fn) {
 			if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
@@ -32,7 +26,7 @@
 	<h2>Placing Hindley-Milner in context</h2>
 	<h3>Emily Estes</h3>
 	<h4>March 30th, 2018 @ <a href="https://www.lambda-squared.com/">Lambda Squared</a></h4>
-	<h4>Slides and source code @ <a href="https://github.com/emily-e/intro-to-lambda-cube">https://github.com/emily-e/intro-to-lambda-cube</a></h4>
+	<h4>Slides @ <a href="https://github.com/emily-e/intro-to-lambda-cube">https://github.com/emily-e/intro-to-lambda-cube</a></h4>
 	<p>To navigate: left arrow - previous slide, right arrow - next slide, escape - toggle slide show mode.</p>
 	<p class="speaker-notes"><em>Abstract</em>
 	Statically typed functional programming languages represent one of the big ideas of computing. But what is a type system? Why is the Hindley-Milner type system at the core of many functional programming languages? What are dependent types and why does the Curry-Howard isomorphism matter? In this talk we're going to get contravariant about the array of arguments against generic ideas about types! Let's manifest the difference between type inference and unityped dynamic languages! Come explore the menagerie of type systems from alpha reduction to System F-omega and their relationships to the unifying principles of the Lambda Cube. Gain a more global perspective on the kinds of type systems that exist in languages you use and will use and the doors they can open to your designs.</p>
@@ -71,7 +65,13 @@
 
 
 
-<div class="slide" style="height: 26em; background-image: url('agents.jpg'); background-size: contain; background-color: #000000;">
+<div class="slide"
+		style="height: 26em;
+			background-image: url('agents.jpg');
+			background-size: contain;
+			background-color: #000000;
+			background-position: center center;
+			background-repeat: no-repeat;">
 	<blockquote style="align: center;"><span style="text-shadow: 7px 7px 4px #000000; font-weight: 500; color: #ffffff; font-size: 4em;"><br/>Never send a human to do a machine's job.</span>
 	<br/><em style="text-shadow: 5px 5px 3px #000000; font-weight: 500; color: #ffffff; font-size: 2em;">Agent Smith</em></blockquote>
 </div>
@@ -83,7 +83,7 @@
 	<h2>A Brief Incomplete History of Type Systems</h1>
 	<ul>
 		<li data-hide="a">Taxonomies and ontologies developed in philosophy since ancient times.</li>
-		<li data-hide="a">17th centtury, Leibniz tried to develop an "algebra of thought".</li>
+		<li data-hide="a">17th century, Leibniz tried to develop an "algebra of thought".</li>
 		<li data-hide="a">19th century, Bertrand Russell creates the first modern type system to solve problems in proofs.</li>
 		<li data-reveal="a">1940, Alonzo Church develops the Simply Typed Lambda Calculus</li>
 		<li data-reveal="a">1969, Roger Hindley develops "The Principal Type-Scheme of an Object in Combinatory Logic" (aka the Hindley-Milner type system)</li>
@@ -141,12 +141,12 @@
 	<h2>Some anti-definitions</h2>
 	<dl>
 		<dt>Strong typing</dt>
-		<dd data-reveal="a">A type system that I like and feel comfortable with</dd>
+		<dd>A type system that I like and feel comfortable with</dd>
 		<dt>Weak typing</dt>
-		<dd data-reveal="a">A type system that worries me, or makes me feel uncomfortable</dd>
+		<dd>A type system that worries me, or makes me feel uncomfortable</dd>
 	</dl>
-	<span data-reveal="a">From <a href="http://blogs.perl.org/users/ovid/2010/08/what-to-know-before-debating-type-systems.html">What To Know Before Debating Type Systems</a></span>
-	<h2 data-reveal="b"><img width="240px" src="fetch.jpg" /><br/>
+	<span>From <a href="http://blogs.perl.org/users/ovid/2010/08/what-to-know-before-debating-type-systems.html">What To Know Before Debating Type Systems</a></span>
+	<h2 data-reveal="a"><img width="240px" src="fetch.jpg" /><br/>
 	Stop trying to make "strong typing" happen.<br/>
 	It's not going to happen.</h2>
 </div>
@@ -170,7 +170,6 @@
 	<h1>The Cube</h1>
 	<div style="align-content: center">
 	<img width="340px" style="align-content: center" data-hide="a" src="Lament_configuration.png" />
-	<!--<img width="340px" style="align-content: center" data-reveal="a" src="Lambda_cube.png" />-->
 	<svg data-reveal="a" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
 		<defs>
 			<marker id="head" orient='auto' markerWidth='2' markerHeight='4' refX='0.1' refY='2'>
@@ -395,7 +394,12 @@
 </div>
 
 
-<div class="slide" style="height: 26em; background-image: url('static.jpg'); background-size: contain; background-color: #000000;" -->
+<div class="slide"
+		style="height: 26em;
+			background-image: url('static.jpg');
+			background-size: contain;
+			background-position: center center;
+			background-repeat: no-repeat;" -->
 	<blockquote style="align: center;"><br/><br/><span style="text-shadow: 7px 7px 4px #000000; font-weight: 500; color: #ffa000; font-size: 3.9em;">The future is already here -- it's just not very evenly distributed.</span>
 	<br/><em style="text-shadow: 5px 5px 3px #000000; color: #ffa000; font-weight: 500; font-size: 2em;">William Gibson</em></blockquote>
 </div>
@@ -413,7 +417,7 @@
 
 <div class="slide">
 <h1>References</h1>
-<h4>Slides and source code @ <a href="https://github.com/emily-e/intro-to-lambda-cube">https://github.com/emily-e/intro-to-lambda-cube</a></h4>
+<h4>Slides @ <a href="https://github.com/emily-e/intro-to-lambda-cube">https://github.com/emily-e/intro-to-lambda-cube</a></h4>
 <ul>
 	<li><a href="https://www.cis.upenn.edu/~bcpierce/tapl/">Types and Programming Languages</a> by Benjamin Pierce</li>
 	<li><a href="http://blogs.perl.org/users/ovid/2010/08/what-to-know-before-debating-type-systems.html">What to know before debating type systems</a></li>

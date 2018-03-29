@@ -168,6 +168,13 @@ var slideshow = function() {
 	document.addEventListener('touchend', touchEnd, false);
 
 	document.querySelector('body').addEventListener('keydown', function (evt) {
+		console.log(evt.keyCode);
+		/* presenter remote does not send left and right arrows, empirically these are the keycodes it did send.
+		So add this hack so it will work. It would be better if the presenter would send the right codes, but this
+		was easier. */
+		if(evt.keyCode == 33) { eventHandler.prev(); }
+		if(evt.keyCode == 34) { eventHandler.next(); }
+
 		// escape
 		if(evt.keyCode == 27) { eventHandler.mode(); }
 		// left
