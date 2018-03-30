@@ -87,7 +87,6 @@ Who uses static analysis tools like ESLint, Dialyzer.
 
 
 
-
 <div class="slide">
 	<h2>A Brief Incomplete History of Type Systems</h1>
 	<ul>
@@ -133,6 +132,7 @@ Who uses static analysis tools like ESLint, Dialyzer.
 </div>
 
 
+
 <div class="slide">
 	<h2>Some Definitions</h2>
 	<dl>
@@ -147,6 +147,8 @@ Who uses static analysis tools like ESLint, Dialyzer.
 		(If you ask Robert Harper they are "unityped languages", i.e. every expression has the static type of <code>any</code>)</dd>
 	</dl>
 </div>
+
+
 
 <div class="slide">
 	<h2>Some anti-definitions</h2>
@@ -180,11 +182,14 @@ Who uses static analysis tools like ESLint, Dialyzer.
 </div>
 
 
+
 <div class="slide" style="width: 100%">
 	<h1>The Cube</h1>
-	<div style="align-content: center">
-	<img width="340px" style="align-content: center" data-hide="a" src="Lament_configuration.png" />
-	<svg data-reveal="a" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+	<div data-hide="a">
+		<img width="340px" style="float: left;" src="Lament_configuration.png" /><br/><br/>
+		<h2>We have such sights to show you.</h2>
+	</div>
+	<svg style="float: left;" data-reveal="a" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
 		<defs>
 			<marker id="head" orient='auto' markerWidth='2' markerHeight='4' refX='0.1' refY='2'>
 			<path d='M0,0 V4 L2,2 Z' fill="auto" />
@@ -220,14 +225,20 @@ Who uses static analysis tools like ESLint, Dialyzer.
 		<path marker-end='url(#head)' stroke-width="3" fill='none' stroke='black'  d="M40,260 l 40,-40" />
 		<path marker-end='url(#head)' stroke-width="3" fill='none' stroke='black'  d="M210,260 l 40,-40" />
 	</svg>
-	</div>
+	<ul style="list-style-position: inside;">
+		<li data-reveal="b">Created partially as a teaching tool to explore different ways types are parameterized in the calculus of constructions.</li>
+		<li data-reveal="c">Each axis represents a way to extend types from the Simply Typed Lambda Calculus</li>
+		<li data-reveal="d">Each corner represents a type system created from these abstractions.</li>
+		<li data-reveal="e">Not every interesting aspect of type systems can be captured in terms of the cube, but many important properties in terms
+		of type system expressiveness map onto the cube very well.</li>
+	</ul>
 </div>
 
 
 
 <div class="slide">
 	<h2>&#x03bb;&#x2192; - Simply Typed Lambda Calculus</h2>
-	<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+	<svg style="float: left;" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
 		<defs>
 			<marker id="head-1" orient='auto' markerWidth='2' markerHeight='4' refX='0.1' refY='2'>
 			<path d='M0,0 V4 L2,2 Z' fill="auto" />
@@ -264,12 +275,18 @@ Who uses static analysis tools like ESLint, Dialyzer.
 		<path marker-end='url(#head-1)' stroke-width="3" fill='none' stroke='black'  d="M40,260 l 40,-40" />
 		<path marker-end='url(#head-1)' stroke-width="3" fill='none' stroke='black'  d="M210,260 l 40,-40" />
 	</svg>
+	<ul style="list-style-position: inside;">
+		<li data-reveal="a">Assigns types to functions of values to values... it's honestly pretty simple.</li>
+		<li data-reveal="b">In fact, the types it expresses prevent fully recursive functions from being assigned a type.</li>
+		<li data-reveal="c">This leads to an amazing fact: Every program that type checks in the simply typed lambda calculus halts.</li>
+		<li data-reveal="d">An even more amazing fact: This is actually useful.</li>
+	</ul>
 </div>
 
 <div class="slide">
 	<h2>&#x03bb;2 - Polymorphic Lambda Calculus<br/>
 	System-F</h2>
-	<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+	<svg style="float: left;" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
 		<defs>
 			<marker id="head-2" orient='auto' markerWidth='2' markerHeight='4' refX='0.1' refY='2'>
 			<path d='M0,0 V4 L2,2 Z' fill="auto" />
@@ -308,12 +325,21 @@ Who uses static analysis tools like ESLint, Dialyzer.
 		<path marker-end='url(#head-2)' stroke-width="3" fill='none' stroke='black'  d="M40,260 l 40,-40" />
 		<path marker-end='url(#head-2)' stroke-width="3" fill='none' stroke='black'  d="M210,260 l 40,-40" />
 	</svg>
+	<ul style="list-style-position: inside;">
+		<li data-reveal="a">Introduces type variables, i.e. values depending types.</li>
+		<li data-reveal="b">This is Parametric Polymorphism.</li>
+		<li data-reveal="c">ML helped popularize this (40+ years ago)</li>
+		<li data-reveal="d">Example: The identity function takes values of type <code>a</code> to type <code>a</code>. <code>a</code> is a variable whose value is a type.</li>
+		<li data-reveal="e">Can be combined with "dictionary passing style" to encode Haskell style type classes</li>
+	</ul>
 </div>
+
+
 
 <div class="slide">
 	<h2>&#x03bb;&#x03c9; - Higher Order Polymorphic Lambda Calculus<br/>
 	System F<sub>&#x03c9;</sub></h2>
-	<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+	<svg style="float: left;" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
 		<defs>
 			<marker id="head-3" orient='auto' markerWidth='2' markerHeight='4' refX='0.1' refY='2'>
 			<path d='M0,0 V4 L2,2 Z' fill="auto" />
@@ -352,11 +378,20 @@ Who uses static analysis tools like ESLint, Dialyzer.
 		<path marker-end='url(#head-3)' stroke-width="3" fill='none' stroke='black'  d="M40,260 l 40,-40" />
 		<path marker-end='url(#head-3)' stroke-width="3" fill='none' stroke='black'  d="M210,260 l 40,-40" />
 	</svg>
+	<ul style="list-style-position: inside;">
+		<li data-reveal="a">Parameterizes types with other types</li>
+		<li data-reveal="b">Most of you are familar with this as it was the basis of the idea of generics in Java and C#.</li>
+		<li data-reveal="c">System F<sub>&#x03c9;</sub> was used to define how generics in Java should work.</li>
+		<li data-reveal="d">Most examples use containers like <code>Lists a -> List b</code>. However, you can also encode states in to the system
+		via techniques like phantom types.</li>
+	</ul>
 </div>
+
+
 
 <div class="slide">
 	<h2>&#x03bb;&#x03a0;&#x03c9; - Higher Order Dependently Typed Polymorphic Lambda Calculus</h2>
-	<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+	<svg style="float: left;" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
 		<defs>
 			<marker id="head-4" orient='auto' markerWidth='2' markerHeight='4' refX='0.1' refY='2'>
 			<path d='M0,0 V4 L2,2 Z' fill="auto" />
@@ -395,6 +430,13 @@ Who uses static analysis tools like ESLint, Dialyzer.
 		<path marker-end='url(#head-4)' stroke-width="3" fill='none' stroke='black'  d="M40,260 l 40,-40" />
 		<path marker-end='url(#head-4)' stroke-width="3" fill='none' stroke='black'  d="M210,260 l 40,-40" />
 	</svg>
+	<ul style="list-style-position: inside;">
+		<li data-reveal="a">This adds the ability to parameterize types by values.</li>
+		<li data-reveal="b">Can write types like <code>concat: List m -> List n -> List (n+m)</code>.</li>
+		<li data-reveal="c">Languages like Idris and Agda explore this.</li>
+		<li data-reveal="d">The Mathematical Logic side of this are proof assistants like Coq.</li>
+		<li data-reveal="e">In other words, you now have a powerful theorem prover as your type system.</li>
+	</ul>
 </div>
 
 
